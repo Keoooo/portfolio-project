@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     # apps created by me
     'projects',
     'article',
+    # 3rd part apps
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -73,13 +75,18 @@ TEMPLATES = [
 WSGI_APPLICATION = 'portfolioAK.wsgi.application'
 
 
-# Database
+# Database using postgress pass and user changed
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'porfoliodb',
+        'USER': 'postgres',
+        'PASSWORD': '1WcHAB', # this is going to change!! local only db
+        'HOST': 'localhost',
+        'PORT': '5432',
+
     }
 }
 
