@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-STATICFILES_DIR = [ os.path.join(BASE_DIR, 'static')
+STATICFILES_DIR = [ os.path.join(BASE_DIR, 'porfolioAK/static')
 ]
 
 

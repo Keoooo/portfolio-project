@@ -4,5 +4,5 @@ from .models import PortfolioExample
 
 def homepage(request):
 	examples = PortfolioExample.objects
-	return render(request, 'portexample/homepage.html', {'PortfolioExample':examples})
+	return render(request, 'portexample/homepage.html',{'PortfolioExample':examples})
 
