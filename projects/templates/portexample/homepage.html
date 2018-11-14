@@ -29,7 +29,7 @@
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#"><i class="fas fa-laptop" style="color: #ef6827;"></i></a>
       <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#">About</a>
-      <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#">Porfolio</a>
+      <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#portscroll">Porfolio</a>
       <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#">Article</a>
       <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#">Contact</a>
       
@@ -48,11 +48,11 @@
 <section class="introtwo  text-center">
   <div class="container ">
     <h1 class="jumbotron-heading">ANDREW KEOGH</h1>
-    <p class="lead" style="color:white; font-weight: bold;">Hello, Welcome to my online portfolio</p>
+    <p class="lead" style="color:white; font-weight: bold;">Hello, Welcome to my online portfolio.</p>
     <br / >
     <hr style="border: 0; height: 1px; background: #ef6827; width: 50%;"/>
     <h2 class="jumbotron-heading">PORTFOLIO</h2>
-    <a href="#" class="btn" style=" padding-top: 0px"><i class="fas fa-caret-down fa-2x"></i></a> 
+    <a href="#portscroll" class="btn" style=" padding-top: 0px"><i class="fas fa-caret-down fa-2x"></i></a> 
   </p>
 </div>
 
@@ -61,7 +61,7 @@
   <div class=" portexa container-fluid">
     <!-- Project One -->
     {% for exam in PortfolioExample.all %}
-    <div class="row">
+    <div id="portscroll"class="row">
       <div class="col-md-7">
         <a href="#">
           <img class="img-fluid rounded mb-3 mb-md-0" src="{{ exam.image.url }}" alt="">
@@ -71,7 +71,7 @@
         <h3>{{ exam.title }}</h3>
         <hr style="width: 50%; background-color:#ef6827;" />
         <p>{{ exam.summery }}</p>
-        <a class="btn" href="#">View Project</a>
+        <a class="btn" target="_blank" href="{{ exam.link }}">VIEW PROJECT<i class="fab fa-github-square"></i></i></a>
       </div>
     </div>
     

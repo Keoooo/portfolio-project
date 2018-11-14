@@ -43,12 +43,11 @@
 .introtwo{
  background-color: #21201f;
  padding-top:5px;
-  margin-bottom: 0px;
-  color: #fff;
+ margin-bottom: 0px;
+ color: #fff;
 }
-
-.introtwo h {
-
+.introtwo i {
+  padding-left: 2px;
 }
 
 .introtwo a {
