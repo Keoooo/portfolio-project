@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from .models import PortfolioExample
+
 
 def homepage(request):
-	return render(request, 'portexample/homepage.html')
+	examples = PortfolioExample.objects
+	return render(request, 'portexample/homepage.html', {'PortfolioExample':examples})
+
