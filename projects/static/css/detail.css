@@ -14,7 +14,6 @@
   backdrop-filter: saturate(180%) blur(20px);
 }
 
-
 .site-header a {
   color: #ef6827;
   transition: ease-in-out color .15s;
@@ -25,20 +24,22 @@
   text-decoration: none;
 }
 
+
+
 .no-padding{
   padding-left:0;
   padding-right:0;
 }
 
 
-
  /* hero below img */
-.detailblog{
- background-color: #21201f;
- padding-top:5px;
- margin-bottom: 0px;
- color: #fff;
-}
+ .detailblog{
+   padding-top:5px;
+   margin-bottom: 0px;
+   color: #fff;
+   background-color: #21201f;
+ }
+
 .detailblog i {
   padding-left: 2px;
 }
@@ -53,7 +54,21 @@
   text-decoration: none;
 }
 
+.detailblog a {
+  color: #ef6827;
+  transition: ease-in-out color .15s;
+}
+
+.detailblog a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
  /* blog section*/
+
+ .articlecard{
+   background-color: #383838;
+ }
 
  .card{
   background-color: #727271;

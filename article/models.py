@@ -10,6 +10,7 @@ format_date = returns a nice looking date using strftime
 
 class ArticlePost(models.Model):
 	title = models.CharField(max_length=100)
+	article_summery = models.CharField(max_length=200)
 	image_blog = models.ImageField(upload_to='images/')
 	article_body = models.TextField()
 	date = models.DateTimeField()

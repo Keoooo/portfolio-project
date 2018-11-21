@@ -38,10 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # apps created by me
+    'contact',
     'projects',
     'article',
     # 3rd part apps
     'django_summernote',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +61,7 @@ ROOT_URLCONF = 'portfolioAK.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -109,8 +111,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-STATICFILES_DIR = [ os.path.join(BASE_DIR, 'porfolioAK/static')
+STATICFILES_DIR = [ os.path.join(BASE_DIR, 'porfolioAK/static/')
 ]
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # Internationalization
@@ -131,6 +136,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

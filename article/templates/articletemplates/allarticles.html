@@ -28,10 +28,11 @@
   <nav class="site-header sticky-top py-1">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="{% url 'home' %}"><i class="fas fa-laptop" style="color: #ef6827;"></i></a>
-      <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#">About</a>
+      <!-- <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#">About</a>-->
+
       <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="{% url 'home' %}">Porfolio</a>
       <a class="py-2 d-none d-md-inline-block d-block mx-auto active" href="{% url 'allarticles' %}">Article</a>
-      <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#">Contact</a>
+      <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="{% url 'contactpage' %}">Contact</a>
       
     </div>
   </nav>
@@ -55,12 +56,12 @@
             <img class="card-img-top" src="{{ blog.image_blog.url }}" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">{{ blog.title|safe }}</h2>
-              <p class="card-text">{{ blog.summery|safe }} </p>
+              <p class="card-text">{{ blog.article_summery|safe }} </p>
               <a href="{% url 'detail' blog.id %}" id="readmore" class="btn">Read More &rarr;</a>
             </div>
             <div class="card-footer">
               Posted on {{ blog.format_date }} by
-              <a href="#">Andrew Keogh</a>
+              <a href="https://github.com/Keoooo" target="_blank">Andrew Keogh</a>
             </div>
           </div>
 
@@ -76,31 +77,8 @@
 <footer class="footermain container-fluid py-5">
   <div class="row">
     <div class="col-12 col-md">
-      <small class="d-block mb-3 text-muted">&copy;{{ Y }}</small>
+      <small class="d-block mb-3 text-muted">&copy; {% now "Y" %}  Andrew Keogh</small>
     </div>
-    <div class="col-6 col-md">
-      <h5>Socials</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="text-muted" href="#">Instagram</a><i class="fab fa-instagram"></i></li>
-        <li><a class="text-muted" href="#">Twitter</a><i class="fab fa-twitter"></i></li>
-        <li><a class="text-muted" href="#">GitHub</a><i class="fab fa-github-square"></i></li>
-        <li><a class="text-muted" href="#">Stack Overflow</a><i class="fab fa-stack-overflow"></i></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Contact</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="text-muted" href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Articles</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="text-muted" href="#">Latest</a></li>
-        <li><a class="text-muted" href="#">Random Article</a></li>
-      </ul>
-    </div>
-  </div>
 </footer>
 
 

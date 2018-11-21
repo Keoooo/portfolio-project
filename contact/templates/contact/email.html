@@ -1,3 +1,4 @@
+{% load widget_tweaks %}
 {% load static %}
 <!doctype html>
 <html lang="en">
@@ -18,7 +19,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
   <!-- Custom styles for this template -->
-  <link  rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+  <link  rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
 <!-- FONT -->
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 </head>
@@ -29,54 +30,38 @@
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="{% url 'home' %}"><i class="fas fa-laptop" style="color: #ef6827;"></i></a>
       <!-- <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#">About</a>-->
-
       <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="{% url 'home' %}">Porfolio</a>
       <a class="py-2 d-none d-md-inline-block d-block mx-auto active" href="{% url 'allarticles' %}">Article</a>
-      <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="{% url 'contactpage' %}">Contact</a>
+      <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#">Contact</a>
       
     </div>
   </nav>
 
 
+<!--https://github.com/jazzband/django-widget-tweaks -->
+  <section class="introtwo  text-center">
 
-  <section class="detailblog">
-    <!-- Page Content -->
-    <div class="container-fluid  ">
+  	<div class="container">
+  		<div class="row justify-content-md-center">
+  			<form class="" method="post">
+  				<h1>Contact Me</h1>
+         
+  				<div class="col col-lg-2">
+  					{% csrf_token %}
+            {% render_field form.from_email class+="css_class_1 css_class_1" %}
+            {% render_field form.subject class+="css_class_2 css_class_2" %}
+            {% render_field form.message class+="css_class_3 css_class_3" %}
+  				</div>
 
-      <div class="row">
-        <!-- Post Content Column -->
-        <div class="articlecard col-lg-8 mx-auto ">
 
-          <!-- Title -->
-          <h1 class="mt-4">{{ blog.title }}</h1>
-
-          <!-- Author -->
-          <p class="lead">
-            by
-            <a href="https://www.instagram.com/keooodev/" target="_blank">Andrew Keogh</a>
-          </p>
-
-         <hr style="width: 100%; background-color:#ef6827;" />
-
-          <!-- Date/Time -->
-          <p>{{ blog.format_date }}</p>
-
-           <hr style="width: 100%; background-color:#ef6827;" />
-
-          <!-- Preview Image -->
-          <img class="img-fluid rounded" src="{{ blog.image_blog.url }}" alt="">
-
-           <hr style="width: 100%; background-color:#ef6827;" />
-
-          <!-- Post Content -->
-          {{ blog.article_body|safe }}
-        
-
-            </div>
-          </div>
-
-        </div>
-  </section>
+          
+  				<div class="form-actions">
+  					<button type="submit">Send</button>
+  				</div>
+  				</form>
+  			</div>
+       
+  		</section>
 
 
 
@@ -85,8 +70,31 @@
 <footer class="footermain container-fluid py-5">
   <div class="row">
     <div class="col-12 col-md">
-      <small class="d-block mb-3 text-muted">&copy; {% now "Y" %} Andrew Keogh</small>
-    </div> 
+      <small class="d-block mb-3 text-muted">&copy;{{ Y }}</small>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Socials</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="#">Instagram</a><i class="fab fa-instagram"></i></li>
+        <li><a class="text-muted" href="#">Twitter</a><i class="fab fa-twitter"></i></li>
+        <li><a class="text-muted" href="#">GitHub</a><i class="fab fa-github-square"></i></li>
+        <li><a class="text-muted" href="#">Stack Overflow</a><i class="fab fa-stack-overflow"></i></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Contact</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Articles</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="#">Latest</a></li>
+        <li><a class="text-muted" href="#">Random Article</a></li>
+      </ul>
+    </div>
+  </div>
 </footer>
 
 
