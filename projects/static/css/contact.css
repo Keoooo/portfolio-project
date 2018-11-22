@@ -1,0 +1,119 @@
+{% load static %}
+.container {
+  max-width: 960px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/*
+ * Custom translucent site header use 
+ */
+
+ .site-header {
+  background-color: #21201f; 
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+
+.site-header a {
+  color: #ef6827;
+  transition: ease-in-out color .15s;
+}
+
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.no-padding{
+  padding-left:0;
+  padding-right:0;
+}
+
+
+
+ /* hero img not in use  */
+.intro{
+    background-color:orange;
+    opacity:1;    /* -> transparency 50% */
+    z-index:1;      /* -> put overlay over image */
+}
+
+ /* hero below img */
+.introtwo{
+ background-color: #21201f;
+ padding-top:5px;
+ margin-bottom: 0px;
+ color: #fff;
+}
+.introtwo i {
+  padding-left: 2px;
+}
+
+.introtwo hr {
+  margin: 0px;
+}
+
+.introtwo a {
+  color: #ef6827;
+  transition: ease-in-out color .15s;
+}
+
+.introtwo a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ----FOOTER---- */
+
+.footermain{
+  background-color: #21201f;
+}
+
+.footermain h5{
+  color: #ef6827;
+}
+
+
+.footermain i{
+  color: #ef6827;
+  padding-left: 5px;
+}
+
+ /* Contact Section */
+
+.contact{
+  background-color: #727271;
+  height: 400px;
+}
+ 
+.contact ul{
+  margin: 0px;
+}
+
+.contact a{ 
+  padding-right: 5px;
+  color:white;
+  transition: ease-in-out color .15s;
+}
+
+.contact a:hover {
+  color: #ef6817;
+}
+
+/*
+ * Extra utilities
+ */
+
+ .flex-equal > * {
+  -ms-flex: 1;
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+
+.overflow-hidden { overflow: hidden; }
