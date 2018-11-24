@@ -68,7 +68,7 @@
       <div class="col-md-5">
         <h3>{{ exam.title }}</h3>
         <hr style="width: 50%; background-color:#ef6827;" />
-        <p>{{ exam.summery }}</p>
+        <p>{{ exam.summery|safe }}</p>
         <a class="btn" target="_blank" href="{{ exam.link }}">VIEW PROJECT<i class="fab fa-github-square"></i></i></a>
       </div>
     </div>
