@@ -8,7 +8,7 @@
   <meta name="author" content="">
   <link rel="icon" href="../../../../favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave" rel="stylesheet">
-
+  <a href="https://icons8.com"></a>
 
   <title>Andrew Keogh</title>
 
@@ -24,6 +24,7 @@
 <!-- FONT -->
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
 </head>
 
@@ -33,7 +34,7 @@
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#"><i class="fas fa-laptop" style="color: #ef6827;"></i></a>
       <!-- <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#">About</a>-->
-      <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#portscroll">Porfolio</a>
+      <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="#portscroll">Portfolio</a>
       <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="{% url 'allarticles' %}">Article</a>
       <a class="py-2 d-none d-md-inline-block d-block mx-auto" href="{% url 'contactpage' %}">Contact</a>
       
@@ -52,17 +53,18 @@
 <section class="introtwo  text-center">
   <div class="container ">
     <h1 class="jumbotron-heading">ANDREW KEOGH</h1>
-    <p class="lead" style="color:white; font-weight: bold;">Hello, Welcome to my online portfolio.</p>
-    <br / >
     <hr style="border: 0; height: 1px; background: #ef6827; width: 50%;"/>
-    <h2 class="jumbotron-heading">PORTFOLIO</h2>
-    <a href="#portscroll" class="btn" style=" padding-top: 0px"><i class="fas fa-caret-down fa-2x"></i></a> 
+    <p class="lead" style="color:white; font-weight: bold;">Welcome to my online portfolio.</p>
+    <p class="intro-txt"> I created this site to showcase my work as an indie hacker <img src="https://png.icons8.com/dusk/64/web.png" title="Web" width="25" height="25"><br/>I have created one published app on google play and two published websites.<br/> Currently Python is my language of choice</p>
+    <h5 class="jumbotron-heading" style="margin-bottom: 0px;">PORTFOLIO</h5>
+    <a href="#portscroll" class="btn" style=" padding-top: 0px;"><i class="fas fa-caret-down fa-2x" style="display: inline-block;"></i></a> 
   </p>
 </div>
 
 
 <!-- need to loop through with db data -->
   <div class=" portexa container-fluid">
+     <hr style="width: 100%; background-color:#21201f;"/>
     <!-- Project One -->
     {% for exam in PortfolioExample.all %}
     <div id="portscroll"class="row">
@@ -72,7 +74,7 @@
       <div class="col-md-5">
         <h3>{{ exam.title }}</h3>
         <hr style="width: 50%; background-color:#ef6827;" />
-        <p>{{ exam.summery|safe }}</p>
+        <p style="word-spacing: 1px;">{{ exam.summery|safe }}</p>
         <a class="btn" target="_blank" href="{{ exam.link }}">VIEW PROJECT<i class="fab fa-github-square"></i></i></a>
       </div>
     </div>

@@ -19,6 +19,8 @@ from django.conf import settings
 import projects.views
 from django.conf.urls.static import static
 
+""" Imported setting and static to make image show on json request from uploaded image"""
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', projects.views.homepage, name='home'),
